@@ -3,8 +3,8 @@ import os
 import cv2
 import numpy as np
 
-samples = np.loadtxt('generalsamples2.data', np.float32)
-responses = np.loadtxt('generalresponses2.data', np.float32)
+samples = np.loadtxt('data/generalsamples2.data', np.float32)
+responses = np.loadtxt('data/generalresponses2.data', np.float32)
 responses = responses.reshape((responses.size, 1))
 
 model = cv2.ml.KNearest_create()
@@ -52,5 +52,5 @@ for image in os.listdir(filepath):
     counter.append(pictureNum)
     pictureNum += 1
 output = np.array([counter, numbers])
-np.savetxt("data2.csv", output, delimiter=",")
+np.savetxt("data/data2.csv", output, delimiter=",")
 cv2.waitKey(0)

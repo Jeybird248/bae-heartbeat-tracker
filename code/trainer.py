@@ -2,7 +2,7 @@ import sys
 import numpy as np
 import cv2
 
-im = cv2.imread('train2.png')
+im = cv2.imread('data/train2.png')
 gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 blur = cv2.GaussianBlur(gray, (3, 3), 0)
 kernel = np.ones((3, 3), np.uint8)
@@ -45,6 +45,6 @@ responses = np.array(responses, np.float32)
 responses = responses.reshape((responses.size, 1))
 print("training complete")
 
-np.savetxt('generalsamples2.data', samples)
-np.savetxt('generalresponses2.data', responses)
+np.savetxt('data/generalsamples2.data', samples)
+np.savetxt('data/generalresponses2.data', responses)
 # cv2.waitKey(0)
